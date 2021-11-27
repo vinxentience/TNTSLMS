@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82A0ED0B-489E-4D82-AB45-5AC3BB44A733}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>TNTSLMS.My.MyApplication</StartupObject>
+    <RootNamespace>TNTSLMS</RootNamespace>
+    <AssemblyName>TNTSLMS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>TNTSLMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>TNTSLMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>Off</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>e_library_new_logo_final_na_jud_as_in_Vlb_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\AForge.NET\Framework\Release\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\AForge.NET\Framework\Release\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\AForge.NET\Framework\Release\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.v12.12.0.0.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WebCam_Capture">
+      <HintPath>..\..\plugins\WebCam_Capture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.Designer.vb">
+      <DependentUpon>AboutUs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUsCtrl.Designer.vb">
+      <DependentUpon>AboutUsCtrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUsCtrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="bookinventory.Designer.vb">
+      <DependentUpon>bookinventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bookinventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BooksModule.Designer.vb">
+      <DependentUpon>BooksModule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BooksModule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrower_List.Designer.vb">
+      <DependentUpon>Borrower_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Borrower_List.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BorrowReadingMaterial.Designer.vb">
+      <DependentUpon>BorrowReadingMaterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowReadingMaterial.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="eLIBHUBCAMERA.Designer.vb">
+      <DependentUpon>eLIBHUBCAMERA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="eLIBHUBCAMERA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorMsg.Designer.vb">
+      <DependentUpon>ErrorMsg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMsg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.vb">
+      <DependentUpon>ForgotPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateIDCARD.Designer.vb">
+      <DependentUpon>GenerateIDCARD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateIDCARD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generate_backup.Designer.vb">
+      <DependentUpon>generate_backup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="generate_backup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generate_booklist.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>generate_booklist.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="generate_book_borrower.Designer.vb">
+      <DependentUpon>generate_book_borrower.vb</DependentUpon>
+    </Compile>
+    <Compile Include="generate_book_borrower.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generate_book_borrower_viewer.Designer.vb">
+      <DependentUpon>generate_book_borrower_viewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="generate_book_borrower_viewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generate_book_list.Designer.vb">
+      <DependentUpon>generate_book_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="generate_book_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generate_book_list_viewer.Designer.vb">
+      <DependentUpon>generate_book_list_viewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="generate_book_list_viewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generate_report.Designer.vb">
+      <DependentUpon>generate_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="generate_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="generate_bookborrower.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>generate_bookborrower.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HallOfFame.Designer.vb">
+      <DependentUpon>HallOfFame.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HallOfFame.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBox.Designer.vb">
+      <DependentUpon>InputBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InputBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBox_ERROR.Designer.vb">
+      <DependentUpon>InputBox_ERROR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InputBox_ERROR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Librarian.Designer.vb">
+      <DependentUpon>Librarian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryUser.Designer.vb">
+      <DependentUpon>LibraryUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryUser_ACCINFO.Designer.vb">
+      <DependentUpon>LibraryUser_ACCINFO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryUser_ACCINFO.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Library_User_AccInfo.Designer.vb">
+      <DependentUpon>Library_User_AccInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Library_User_AccInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageBook.Designer.vb">
+      <DependentUpon>ManageBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBook.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageBookReturn.Designer.vb">
+      <DependentUpon>ManageBookReturn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBookReturn.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageBorrower.Designer.vb">
+      <DependentUpon>ManageBorrower.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageBorrower.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageUser.Designer.vb">
+      <DependentUpon>ManageUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageUser.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Notification.Designer.vb">
+      <DependentUpon>Notification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notification_email.Designer.vb">
+      <DependentUpon>notification_email.vb</DependentUpon>
+    </Compile>
+    <Compile Include="notification_email.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notification_EMAILctrl.Designer.vb">
+      <DependentUpon>notification_EMAILctrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="notification_EMAILctrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="notification_sms.Designer.vb">
+      <DependentUpon>notification_sms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="notification_sms.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="notification_SMSctrl.Designer.vb">
+      <DependentUpon>notification_SMSctrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="notification_SMSctrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="notification_smsmodem.Designer.vb">
+      <DependentUpon>notification_smsmodem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="notification_smsmodem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalBorrow.Designer.vb">
+      <DependentUpon>PersonalBorrow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalBorrow.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QR_GENERATOR.Designer.vb">
+      <DependentUpon>QR_GENERATOR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QR_GENERATOR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QR_Scanner.Designer.vb">
+      <DependentUpon>QR_Scanner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QR_Scanner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.vb">
+      <DependentUpon>RegistrationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sample1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="statistics.Designer.vb">
+      <DependentUpon>statistics.vb</DependentUpon>
+    </Compile>
+    <Compile Include="statistics.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Students.Designer.vb">
+      <DependentUpon>Students.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Students.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableGridViewMode_BookList.Designer.vb">
+      <DependentUpon>TableGridViewMode_BookList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TableGridViewMode_BookList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableGridViewMode_Students.Designer.vb">
+      <DependentUpon>TableGridViewMode_Students.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TableGridViewMode_Students.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tntslibrarymanagementsystemDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tntslibrarymanagementsystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUser.Designer.vb">
+      <DependentUpon>UpdateUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutUsCtrl.resx">
+      <DependentUpon>AboutUsCtrl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bookinventory.resx">
+      <DependentUpon>bookinventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BooksModule.resx">
+      <DependentUpon>BooksModule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrower_List.resx">
+      <DependentUpon>Borrower_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowReadingMaterial.resx">
+      <DependentUpon>BorrowReadingMaterial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eLIBHUBCAMERA.resx">
+      <DependentUpon>eLIBHUBCAMERA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMsg.resx">
+      <DependentUpon>ErrorMsg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateIDCARD.resx">
+      <DependentUpon>GenerateIDCARD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_backup.resx">
+      <DependentUpon>generate_backup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_booklist.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>generate_booklist.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_book_borrower.resx">
+      <DependentUpon>generate_book_borrower.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_book_borrower_viewer.resx">
+      <DependentUpon>generate_book_borrower_viewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_book_list.resx">
+      <DependentUpon>generate_book_list.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_book_list_viewer.resx">
+      <DependentUpon>generate_book_list_viewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_report.resx">
+      <DependentUpon>generate_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generate_bookborrower.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>generate_bookborrower.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HallOfFame.resx">
+      <DependentUpon>HallOfFame.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBox.resx">
+      <DependentUpon>InputBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBox_ERROR.resx">
+      <DependentUpon>InputBox_ERROR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Librarian.resx">
+      <DependentUpon>Librarian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryUser.resx">
+      <DependentUpon>LibraryUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryUser_ACCINFO.resx">
+      <DependentUpon>LibraryUser_ACCINFO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library_User_AccInfo.resx">
+      <DependentUpon>Library_User_AccInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBook.resx">
+      <DependentUpon>ManageBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBookReturn.resx">
+      <DependentUpon>ManageBookReturn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageBorrower.resx">
+      <DependentUpon>ManageBorrower.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageUser.resx">
+      <DependentUpon>ManageUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notification.resx">
+      <DependentUpon>Notification.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notification_email.resx">
+      <DependentUpon>notification_email.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notification_EMAILctrl.resx">
+      <DependentUpon>notification_EMAILctrl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notification_sms.resx">
+      <DependentUpon>notification_sms.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notification_SMSctrl.resx">
+      <DependentUpon>notification_SMSctrl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="notification_smsmodem.resx">
+      <DependentUpon>notification_smsmodem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalBorrow.resx">
+      <DependentUpon>PersonalBorrow.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QR_GENERATOR.resx">
+      <DependentUpon>QR_GENERATOR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QR_Scanner.resx">
+      <DependentUpon>QR_Scanner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sample1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="statistics.resx">
+      <DependentUpon>statistics.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students.resx">
+      <DependentUpon>Students.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableGridViewMode_BookList.resx">
+      <DependentUpon>TableGridViewMode_BookList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableGridViewMode_Students.resx">
+      <DependentUpon>TableGridViewMode_Students.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUser.resx">
+      <DependentUpon>UpdateUser.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="tntslibrarymanagementsystemDataSet.xsc">
+      <DependentUpon>tntslibrarymanagementsystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tntslibrarymanagementsystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tntslibrarymanagementsystemDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tntslibrarymanagementsystemDataSet.xss">
+      <DependentUpon>tntslibrarymanagementsystemDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="U_NAME\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="CRDESIGNERLib">
+      <Guid>{C0AA5023-C763-4A4B-AFED-ADCF78D6C08B}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CRQUERYENGINE">
+      <Guid>{E4B81D51-FB89-4D07-84A3-00BA9B71D76E}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CRReportPromptEMFLib">
+      <Guid>{7A4E36DC-A11A-4CAF-BC2A-700ECC668FD6}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CRREPORTSOURCEBRIDGELib">
+      <Guid>{80F19574-9245-4DFA-A0A6-8A21874282D3}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalActiveXReportViewerLib13">
+      <Guid>{B816E96D-D151-4000-BADB-53A2D8F3FC65}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalPrintControlLib">
+      <Guid>{62862E3F-F35B-455E-9459-49EAADE80A25}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsDTSAgentLib">
+      <Guid>{3D5D05F6-E97D-43A0-90DC-5D8A6C6C6DB1}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportsLocalConnectionMgrLib">
+      <Guid>{EC39F6C4-A9F2-4341-806B-1529E049A945}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportViewerExportLib">
+      <Guid>{5C21A516-C6AC-42F2-A7B7-846FFE1B122A}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CrystalReportViewerWebReportSourceLib">
+      <Guid>{14173BA7-071D-4216-8C9B-EAB29A55E2D4}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="EMFGENLib">
+      <Guid>{C097B4CF-2CEA-442F-B025-610D2B0C05C8}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="PAGEOBJECTMODELLib">
+      <Guid>{237F4BEC-8AE5-41E1-AE84-B194E4670597}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VLELib">
+      <Guid>{ACF55B94-B31C-4604-912A-314B00C1595D}</Guid>
+      <VersionMajor>13</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="e_library_new_logo_final_na_jud_as_in_k0B_icon.ico" />
+    <Content Include="e_library_new_logo_final_na_jud_as_in_Vlb_icon.ico" />
+    <Content Include="e_library_new_logo_klR_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
